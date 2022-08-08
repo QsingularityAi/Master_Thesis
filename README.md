@@ -1,1 +1,1 @@
-# Multi_gate_Mixture_of_expert_Model_with_synthetic_data_Analysis
+# Multi gate Mixture of expert Model with synthetic data Analysis
