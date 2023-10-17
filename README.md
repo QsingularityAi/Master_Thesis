@@ -23,7 +23,7 @@ git push -uf origin main
 - [📂 Repository Structure](#-repository-structure)
 - [🚀 Getting Started](#-getting-started)
     - [🔧 Installation](#-installation)
-    - [🤖 Running Multi_gate_Mixture_of_expert_Model_with_synthetic_data_Analysis.git](#-running-Multi_gate_Mixture_of_expert_Model_with_synthetic_data_Analysis.git)
+    - [🤖 Running Master_Thesis.git](#-running-Master_Thesis.git)
     - [🧪 Tests](#-tests)
 - [🛣 Roadmap](#-roadmap)
 - [🤝 Contributing](#-contributing)
@@ -153,14 +153,14 @@ Please ensure you have the following dependencies installed on your system:
 
 ### 🔧 Installation
 
-1. Clone the Multi_gate_Mixture_of_expert_Model_with_synthetic_data_Analysis.git repository:
+1. Clone the Master_Thesis.git repository:
 ```sh
-git clone https://github.com/QsingularityAi/Multi_gate_Mixture_of_expert_Model_with_synthetic_data_Analysis.git
+git clone https://github.com/QsingularityAi/Master_Thesis.git
 ```
 
 2. Change to the project directory:
 ```sh
-cd Multi_gate_Mixture_of_expert_Model_with_synthetic_data_Analysis.git
+cd Master_Thesis.git
 ```
 
 3. Install the dependencies:
@@ -168,7 +168,7 @@ cd Multi_gate_Mixture_of_expert_Model_with_synthetic_data_Analysis.git
 pip install -r requirements.txt
 ```
 
-### 🤖 Running Multi_gate_Mixture_of_expert_Model_with_synthetic_data_Analysis.git
+### 🤖 Running Master_Thesis.git
 
 ```sh
 python main.py
