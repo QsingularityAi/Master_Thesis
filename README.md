@@ -233,7 +233,8 @@ This project is licensed under the `ℹ️  LICENSE-TYPE` License. See the [LICE
 
 ## 👏 Acknowledgments
 
-`- ℹ️ List any resources, contributors, inspiration, etc.`
+`- ℹ️ This code bulid by Anurag Trivedi and project offered by faculty of Computer science and Chair of Process informatics and Machine Data Analysis.
+feel free reach out to me if you have any Questions on my email aanuragtrivedi007@gmail.com.`
 
 [↑ Return](#Top)
 
