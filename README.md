@@ -131,14 +131,23 @@ This structured approach aims to provide a well-rounded analysis of MTL's potent
 Please ensure you have the following dependencies installed on your system:
 
 `- ℹ️ python=3.10`
+
 `- ℹ️ torchaudio`
+
 `- ℹ️ torchvision`
+
 `- ℹ️ pytorch`
+
 `- ℹ️ cpuonly1`
+
 `- ℹ️ scikit-learn`
+
 `- ℹ️ plotly`
+
 `- ℹ️ pandas`
+
 `- ℹ️ scikit-optimize`
+
 `- ℹ️ optuna`
 
 
