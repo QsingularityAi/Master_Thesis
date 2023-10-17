@@ -1,23 +1,32 @@
+import numpy as np
 import torch
 import torch.nn as nn
 from data import data_preparation
 from mmoemodel import MMOE
-from mini_batch import random_mini_batches
+from utils import random_mini_batches
+import matplotlib.pyplot as plt
 
-
-LR = 0.001
+LR = 0.00019431505756021647
 mb_size = 100
+# Training loss
+cost1tr = []
+cost2tr = []
+costtr = []
+# Validation loss
+cost1D = []
+cost2D = []
+costD = []
 
 def main():
     print()
     print("Training...")
-    X_train, Y1_train, Y2_train, X_valid, Y1_valid, Y2_valid, X_test, Y1_test, Y2_test = data_preparation(num_feature=100, rho=0.5)
+    X_train, Y1_train, Y2_train, X_valid, Y1_valid, Y2_valid = data_preparation(num_feature=50, rho=0.8, num_row = 10000)
     num_inputs = X_train.shape[1]
-    MTL = MMOE(num_experts=3, num_tasks=2, num_inputs=num_inputs, hidden_expert_neurons=64, hidden_expert_neurons2=16, hidden_tower_neurons=1)
+    MTL = MMOE(num_experts=1, num_neurons_expert=44, hidden_neu_expert=39, hidden_tower_neu=10, num_neurons_expert2=8, num_tasks=2,num_neurons_tower=1, num_inputs=num_inputs)
     optimizer = torch.optim.Adam(MTL.parameters(), lr=LR)
     loss_func = nn.L1Loss()
     input_size, feature_size = X_train.shape
-    for epoch in range(300):
+    for it in range(500):
         epoch_cost = 0
         epoch_cost1 = 0
         epoch_cost2 = 0
@@ -50,9 +59,10 @@ def main():
             cost1D.append(l1D)
             cost2D.append(l2D)
             costD.append(l1D+l2D)
-        print('Epoch: [{}/{}], Total loss: {:.3f}'.format(epoch+1 , 300, loss.item()))  
+        print("Epoch: ", it, " Train Loss1: ", cost1tr[-1], " Val Loss1: ", cost1D[-1], " Train Loss2: ", cost2tr[-1], " Val Loss2: ",  cost2D[-1]) 
         
         #print("Epoch: ", it, " Training Loss: ", costtr[-1], " Validation Loss: ", costD[-1])
                     
 if __name__ == '__main__':
     main()
+

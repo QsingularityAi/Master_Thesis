@@ -2,16 +2,16 @@
 import torch.nn as nn
 import torch.nn.functional as F
 
-
-n_output_1 = 1
-n_output_2 = 1
-n_output_3 = 1
-
 class MTL_NetworkC(nn.Module):
-    def __init__(self, feature_size, hidden_layer_size):
+    def __init__(self, feature_size, hidden_layer_size, task_layer1, task_layer2, n_output_1, n_output_2, n_output_3):
         super(MTL_NetworkC, self).__init__()
         self.feature_size = feature_size
         self.hidden_layer_size = hidden_layer_size
+        self.task_layer1 = task_layer1
+        self.task_layer2 = task_layer2
+        self.n_output_1 = n_output_1
+        self.n_output_2 = n_output_2
+        self.n_output_3 = n_output_3
         self.input_layer = nn.Sequential(
                            nn.Linear(feature_size, hidden_layer_size),
                            nn.Sigmoid()
@@ -25,17 +25,17 @@ class MTL_NetworkC(nn.Module):
         self.output_layer = nn.Sequential(nn.Linear(hidden_layer_size, n_output_1),
                             nn.Sigmoid())
         self.hidden_layer_2 = nn.Sequential(
-                            nn.Linear(hidden_layer_size, 5),
+                            nn.Linear(hidden_layer_size, task_layer1),
                             nn.Sigmoid(),
-                            nn.Linear(5, 5),
+                            nn.Linear(task_layer1, task_layer1),
                             nn.Sigmoid(),
-                            nn.Linear(5, n_output_2))
+                            nn.Linear(task_layer1, n_output_2))
         self.hidden_layer_3 = nn.Sequential(
-                            nn.Linear(hidden_layer_size, 5),
+                            nn.Linear(hidden_layer_size, task_layer2),
                             nn.Sigmoid(),
-                            nn.Linear(5, 5),
+                            nn.Linear(task_layer2, task_layer2),
                             nn.Sigmoid(),
-                            nn.Linear(5, n_output_3))                    
+                            nn.Linear(task_layer2, n_output_3))                    
     
     def forward(self, x):
         input_data = self.input_layer(x)

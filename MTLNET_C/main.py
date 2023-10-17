@@ -2,23 +2,23 @@ import torch
 import torch.nn as nn
 from data import data_preparation
 from mtl_networkC import MTL_NetworkC
-from mini_batch import random_mini_batches
+from utils import random_mini_batches
 
 
-LR = 0.001
+LR = 0.006898443729831321
 mb_size = 100
 
 def main():
     # Train model
     print()
     print("Training...")
-    X_train, Y1_train, Y2_train, X_valid, Y1_valid, Y2_valid, X_test, Y1_test, Y2_test = data_preparation(num_feature=100, rho=0.5)
+    X_train, y1_train, y2_train, X_test, y1_test, y2_test = data_preparation(num_feature=100, rho=0.8, num_row = 10000)
     num_inputs = X_train.shape[1]
-    MTL = MTL_NetworkC(feature_size=num_inputs,hidden_layer_size=80)
+    MTL = MTL_NetworkC(feature_size=num_inputs,hidden_layer_size=54, task_layer1=5, task_layer2=9, n_output_1=1, n_output_2=1, n_output_3=1)
     optimizer = torch.optim.Adam(MTL.parameters(), lr=LR)
-    loss_func = nn.L1Loss()
+    loss_func = nn.MSELoss()
     input_size, feature_size = X_train.shape
-    for epoch in range(300):
+    for it in range(1000):
         epoch_cost = 0
         epoch_cost1 = 0
         epoch_cost2 = 0
@@ -30,7 +30,7 @@ def main():
         cost4tr = []
         costtr = []
         num_minibatches = int(input_size / mb_size)
-        for minibatch in (random_mini_batches(X_train, Y1_train, Y2_train, mb_size)):
+        for minibatch in (random_mini_batches(X_train, y1_train, y2_train, mb_size)):
             X_batch, Y1_batch, Y2_batch  = minibatch
             Y1_pred, Y2_pred, Y3_pred, Y4_pred = MTL(X_batch)
             loss1 = loss_func(Y1_pred, Y1_batch.view(-1,1))
@@ -52,12 +52,13 @@ def main():
         #cost2tr.append(torch.mean(epoch_cost2))
         cost3tr.append(torch.mean(epoch_cost3))
         cost4tr.append(torch.mean(epoch_cost4))
+        MTL.eval()
         with torch.no_grad():
-            val1_predict, val2_predict, val3_predict, val4_predict = MTL(X_valid)
-            l1D = loss_func(val1_predict, Y1_valid.view(-1,1))
-            l2D = loss_func(val2_predict, Y2_valid.view(-1,1))
-            l3D = loss_func(val3_predict, Y1_valid.view(-1,1))
-            l4D = loss_func(val4_predict, Y2_valid.view(-1,1))
+            val1_predict, val2_predict, val3_predict, val4_predict = MTL(X_test)
+            l1D = loss_func(val1_predict, y1_test.view(-1,1))
+            l2D = loss_func(val2_predict, y2_test.view(-1,1))
+            l3D = loss_func(val3_predict, y1_test.view(-1,1))
+            l4D = loss_func(val4_predict, y2_test.view(-1,1))
             comb_val_loss = l1D+l2D
             cost1D = []
             cost2D = []
@@ -69,7 +70,7 @@ def main():
             cost3D.append(l3D)
             cost4D.append(l4D)
             costD.append(comb_val_loss+l3D+l4D)
-        print('Epoch: [{}/{}], Loss: {:.3f}'.format(epoch+1 , 300, loss.item()))
+        print("Epoch: ", it, " Train Loss1: ", cost3tr[-1], " Val Loss1: ", cost3D[-1], " Train Loss2: ", cost4tr[-1], " Val Loss2: ", cost4D[-1])
 
         #print("Epoch: ", it, " Training Loss: ", costtr[-1], " Validation Loss: ", costD[-1])
                     

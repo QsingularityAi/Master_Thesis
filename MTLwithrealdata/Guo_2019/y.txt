@@ -1,0 +1,1 @@
+Yield_strength,Tensile_strength,Elongation

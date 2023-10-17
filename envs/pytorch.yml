@@ -1,0 +1,16 @@
+name: pytorch
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - torchaudio
+  - torchvision
+  - pytorch
+  - cpuonly
+  - scikit-learn
+  - pandas
+  - scikit-optimize
+  - optuna
+  - openpyxl
+prefix: C:\Users\conrad\.conda\envs\pytorch
+
