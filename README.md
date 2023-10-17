@@ -1,12 +1,8 @@
-# Multi-task-learning_Anurag_Trivedi_Master
-
-
+# Master Thesis: Multi-task learning for holistic data-driven models of engineering systems
 
 ## Getting started
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-
 
 ## Add your files
 
@@ -36,7 +32,8 @@ git push -uf origin main
 
 ## 📍 Overview
 
-## Introduction : Multiple linked tasks can now be learned simultaneously thanks to the growing popularity of Multi-Task Learning (MTL) in many deep learning applications. This has led the way for novel modelling techniques. MTL has been included into engineering sciences, although only to a limited extent, despite its success in some areas. The classic data-driven engineering models frequently narrowly focus on particular system behaviour characteristics or parameters, restricting a whole knowledge of the system.
+## Introduction : 
+Multiple linked tasks can now be learned simultaneously thanks to the growing popularity of Multi-Task Learning (MTL) in many deep learning applications. This has led the way for novel modelling techniques. MTL has been included into engineering sciences, although only to a limited extent, despite its success in some areas. The classic data-driven engineering models frequently narrowly focus on particular system behaviour characteristics or parameters, restricting a whole knowledge of the system.
 
 ## Objective:
 By investigating the possibilities of using MTL to analyse tabular data obtained from engineering domains, this thesis aims to close this gap. With this method, we want to move beyond the traditional single-parameter concentration and promote a more holistic description of system behaviour. This thesis aims to support the effectiveness and usability of MTL in the engineering domain through a thorough examination of the current literature, the development of synthetic datasets, the use of MTL methodologies, and a baseline comparison to single-task learning.
