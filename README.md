@@ -11,7 +11,7 @@ To make it easy for you to get started with GitLab, here's a list of recommended
 
 ```
 cd existing_repo
-git remote add origin https://gitlab.hrz.tu-chemnitz.de/s4834549--tu-dresden.de/BreadcrumbsMulti_gate_Mixture_of_expert_Model_with_synthetic_data_Analysis.git
+git remote add origin https://github.com/QsingularityAi/Master_Thesis.git
 git branch -M main
 git push -uf origin main
 ```
