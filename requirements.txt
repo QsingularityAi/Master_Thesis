@@ -1,0 +1,11 @@
+python==3.10.*
+torchaudio
+torchvision
+torch
+cpuonly1
+scikit-learn
+plotly
+pandas
+scikit-optimize
+optuna
+dash
