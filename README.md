@@ -6,7 +6,7 @@
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+
 
 ## Add your files
 
@@ -25,7 +25,6 @@ git push -uf origin main
 - [📍 Overview](#-overview)
 - [📦 Features](#-features)
 - [📂 Repository Structure](#-repository-structure)
-- [⚙️ Modules](#modules)
 - [🚀 Getting Started](#-getting-started)
     - [🔧 Installation](#-installation)
     - [🤖 Running Multi_gate_Mixture_of_expert_Model_with_synthetic_data_Analysis.git](#-running-Multi_gate_Mixture_of_expert_Model_with_synthetic_data_Analysis.git)
@@ -37,13 +36,38 @@ git push -uf origin main
 
 ## 📍 Overview
 
-HTTPStatus Exception: 401
+## Introduction : Multiple linked tasks can now be learned simultaneously thanks to the growing popularity of Multi-Task Learning (MTL) in many deep learning applications. This has led the way for novel modelling techniques. MTL has been included into engineering sciences, although only to a limited extent, despite its success in some areas. The classic data-driven engineering models frequently narrowly focus on particular system behaviour characteristics or parameters, restricting a whole knowledge of the system.
+
+## Objective:
+By investigating the possibilities of using MTL to analyse tabular data obtained from engineering domains, this thesis aims to close this gap. With this method, we want to move beyond the traditional single-parameter concentration and promote a more holistic description of system behaviour. This thesis aims to support the effectiveness and usability of MTL in the engineering domain through a thorough examination of the current literature, the development of synthetic datasets, the use of MTL methodologies, and a baseline comparison to single-task learning.
+
 
 ---
 
-## 📦 Features
+## 📦 Tasks
 
-HTTPStatus Exception: 401
+### Literature Review
+- Comprehensive review of existing literature on the generation of synthetic tabular data for MTL.
+- Examination of the characteristics defining task relationships within MTL frameworks.
+- Analysis of current MTL methods tailored for tabular data.
+
+### Synthetic Data Generation and Analysis
+- Development and implementation of methods for generating synthetic tabular data to facilitate a diverse array of scenarios concerning task relationships.
+- Comparative analysis of MTL approaches against a single-task learning baseline using generated synthetic data to ascertain the merits and demerits of MTL.
+
+### Real-world Data Validation
+- Application and adaptation of the chosen MTL methods on real-world datasets within the domain of process and material engineering.
+- Comparative evaluation of MTL and single-task learning on real-world datasets to validate the findings from synthetic data analysis.
+
+### Evaluation and Comparison
+- Establishing evaluation metrics to ascertain the performance and applicability of MTL in both synthetic and real-world scenarios.
+- Thorough comparison and discussion on the findings to delineate the circumstances under which MTL outperforms single-task learning.
+
+### Conclusion and Future Work
+- Summarizing the key findings, challenges encountered, and the implications of this study on the broader engineering domain.
+- Suggesting avenues for future research to further the understanding and application of MTL in engineering sciences.
+
+This structured approach aims to provide a well-rounded analysis of MTL's potential in enhancing data-driven modeling in engineering, thereby contributing to a more integrated and comprehensive understanding of complex system behaviors.
 
 ---
 
@@ -101,13 +125,6 @@ HTTPStatus Exception: 401
         └── pytorch.yml
 ```
 
-
----
-
-## ⚙️ Modules
-
-
-
 ---
 
 ## 🚀 Getting Started
@@ -161,10 +178,21 @@ pytest
 
 ## 🛣 Roadmap
 
-> - [X] `ℹ️  Task 1: Implement X`
-> - [ ] `ℹ️  Task 2: Implement Y`
-> - [ ] `ℹ️ ...`
+The roadmap below outlines the key milestones and tasks planned for this project to successfully investigate and evaluate the potential of Multi-Task Learning (MTL) in engineering domains.
 
+> - [X] `ℹ️  Task 1: Conduct a comprehensive literature review on synthetic tabular data generation for MTL.`
+> - [X] `ℹ️  Task 2: Examine and document the characteristics defining task relationships within MTL frameworks.`
+> - [X] `ℹ️  Task 3: Analyze and summarize current MTL methods tailored for tabular data.`
+> - [X] `ℹ️  Task 4: Develop and implement methods for generating synthetic tabular data.`
+> - [X] `ℹ️  Task 5: Perform a comparative analysis of MTL approaches against a single-task learning baseline using generated synthetic data.`
+> - [X] `ℹ️  Task 6: Apply and adapt chosen MTL methods on real-world datasets within the domain of process and material engineering.`
+> - [X] `ℹ️  Task 7: Conduct a comparative evaluation of MTL and single-task learning on real-world datasets.`
+> - [X] `ℹ️  Task 8: Establish evaluation metrics to gauge the performance and applicability of MTL in both synthetic and real-world scenarios.`
+> - [X] `ℹ️  Task 9: Conduct a thorough comparison and discussion on the findings to delineate the circumstances under which MTL outperforms single-task learning.`
+> - [X] `ℹ️  Task 10: Summarize key findings, challenges encountered, and the implications of this study on the broader engineering domain.`
+> - [X] `ℹ️  Task 11: Suggest avenues for future research to further the understanding and application of MTL in engineering sciences.`
+
+Each task represents a significant step towards achieving the project's objective of enhancing data-driven modeling in engineering through MTL. As tasks are completed, they will be marked accordingly, providing a clear indication of the project's progress.
 
 ---
 
