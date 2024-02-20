@@ -227,7 +227,7 @@ The project maintainers will review your changes and provide feedback or merge t
 
 ## 📄 License
 
-This project is licensed under the `ℹ️  LICENSE-TYPE` License. See the [LICENSE-Type](LICENSE) file for additional info.
+This project is licensed under the `ℹ️  MIT` License. See the [MIT](LICENSE) file for additional info.
 
 ---
 
